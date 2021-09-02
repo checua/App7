@@ -1,5 +1,6 @@
 package com.example.app7;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -118,7 +119,7 @@ public class signup extends AppCompatActivity {
                 e.printStackTrace();
                 return e.getMessage().toString();
             } catch (Exception e) {
-                return "Exception. Please check your code and database.";
+                return e.getMessage().toString(); //"Exception. Please check your code and database.";
             }
         }
 
@@ -134,6 +135,11 @@ public class signup extends AppCompatActivity {
             }
 
         }
+    }
+
+    public void Login(View v) {
+        Intent i = new Intent(signup.this, login.class);
+        startActivity(i);
     }
 
 }
