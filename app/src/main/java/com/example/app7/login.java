@@ -67,7 +67,7 @@ public class login extends AppCompatActivity {
                 Log.e("query",query);
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
-                    String passcode = rs.getString("password");
+                    String passcode = rs.getString("contra");
                     connect.close();
                     rs.close();
                     ps.close();
