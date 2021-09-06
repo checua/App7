@@ -14,22 +14,17 @@ public class ConnectionHelper {
     @SuppressLint("NewApi")
     public static Connection CONN() {
 
-
-        //String _server = "52.162.104.33:1443";
-
-        //String _server = "52.162.104.33:1433";
-
-
+        String _user = " ";
+        String _pass = " ";
+        String _DB = " ";
+        String _server = " ";
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                .permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         Connection conn = null;
-        String ConnURL = null;
+        String ConnURL;
         try {
-
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                    .permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            //Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
             ConnURL = "jdbc:jtds:sqlserver://" + _server + ";"
                     + "databaseName=" + _DB + ";user=" + _user + ";password="
                     + _pass + ";";
