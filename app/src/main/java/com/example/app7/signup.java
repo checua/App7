@@ -40,7 +40,7 @@ public class signup extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                progressBar.setVisibility(View.INVISIBLE);
                 if (isEmpty(edtEmailAddress.getText().toString()) ||
                         isEmpty(edtPassword.getText().toString()) ||
                         isEmpty(edtConfirmPassword.getText().toString()))

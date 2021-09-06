@@ -37,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+
         android:gravity="start"
         android:text="Enter Email Address"
         android:textSize="16sp" />
@@ -92,7 +93,7 @@
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="250dp"
-        android:layout_height="34dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
@@ -102,7 +103,7 @@
     <Button
         android:id="@+id/btnSignIn"
         android:layout_width="250dp"
-        android:layout_height="34dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="@color/colorLightGray"
@@ -113,6 +114,7 @@
 
     <ProgressBar
         android:id="@+id/pbbar"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />

@@ -48,18 +48,32 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:padding="5dp"
         android:background="@color/colorLightGray"
-        android:text="LOGIN"
-        android:onClick="DoLogin"/>
+        android:onClick="DoLogin"
+        android:padding="5dp"
+        android:text="@string/btn_login" />
 
     <ProgressBar
         android:id="@+id/progressBar"
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        android:text="SIGN UP"
+        android:textColor="#fff" />
+
+
 </LinearLayout>

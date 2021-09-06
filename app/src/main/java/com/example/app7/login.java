@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,8 @@ public class login extends AppCompatActivity {
     ProgressBar progressBar;
     LinearLayout lvparent;
 
+    Button btnSignUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +39,20 @@ public class login extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         lvparent = findViewById(R.id.lvparent);
-
+        btnSignUp = findViewById(R.id.btnSignUp);
         progressBar = findViewById(R.id.progressBar);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(login.this, signup.class);
+                startActivity(i);
+
+            }
+        });
     }
 
 
@@ -51,7 +66,7 @@ public class login extends AppCompatActivity {
             emailId = edtEmailAddress.getText().toString();
             password = edtPassword.getText().toString();
             progressBar.setVisibility(View.VISIBLE);
-            btnLogin.setVisibility(View.GONE);
+            //btnLogin.setVisibility(View.GONE);
         }
 
         @Override
@@ -91,8 +106,8 @@ public class login extends AppCompatActivity {
 
             //Toast.makeText(signup.this, result, Toast.LENGTH_SHORT).show();
             ShowSnackBar(result);
-            progressBar.setVisibility(View.GONE);
-            btnLogin.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.INVISIBLE);
+            //btnLogin.setVisibility(View.VISIBLE);
             if (result.equals("success")) {
                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("userdetails",0);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -127,5 +142,8 @@ public class login extends AppCompatActivity {
         DoLoginForUser login = new DoLoginForUser();
         login.execute("");
     }
+
+
+
 
 }
