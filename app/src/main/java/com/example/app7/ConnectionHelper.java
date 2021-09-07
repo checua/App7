@@ -14,10 +14,6 @@ public class ConnectionHelper {
     @SuppressLint("NewApi")
     public static Connection CONN() {
 
-        String _user = "misiones";
-        String _pass = "Alopedev7mision";
-        String _DB = "mapsMarkers";
-        String _server = "dpa6ecad46.database.windows.net";
         
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .permitAll().build();
