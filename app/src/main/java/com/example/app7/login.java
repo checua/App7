@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +28,7 @@ public class login extends AppCompatActivity {
     Button btnLogin;
     ProgressBar progressBar;
     LinearLayout lvparent;
+    TextView tvSignUp;
 
     Button btnSignUp;
 
@@ -41,6 +43,7 @@ public class login extends AppCompatActivity {
         lvparent = findViewById(R.id.lvparent);
         btnSignUp = findViewById(R.id.btnSignUp);
         progressBar = findViewById(R.id.progressBar);
+        //tvSignUp = findViewById(R.id.tvSingUp);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -53,6 +56,18 @@ public class login extends AppCompatActivity {
 
             }
         });
+        /*
+        tvSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(login.this, signup.class);
+                startActivity(i);
+            }
+        });
+        */
+
+
+
     }
 
 

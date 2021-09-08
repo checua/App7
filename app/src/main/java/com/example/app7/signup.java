@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +24,7 @@ public class signup extends AppCompatActivity {
     Button btnSignUp;
     ProgressBar progressBar;
     LinearLayout lvparent;
+    TextView tvLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class signup extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
         progressBar = findViewById(R.id.pbbar);
         lvparent = findViewById(R.id.lvparent);
+        //tvLogin = findViewById(R.id.tvLogin);
         this.setTitle("User SignUp");
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +57,16 @@ public class signup extends AppCompatActivity {
 
             }
         });
+/*
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(signup.this, login.class);
+                startActivity(i);
+            }
+        });
+
+ */
     }
 
     public void ShowSnackBar(String message) {

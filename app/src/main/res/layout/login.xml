@@ -14,8 +14,8 @@
 
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:src="@drawable/usuario" />
@@ -25,7 +25,7 @@
         android:id="@+id/edtEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo"
+        android:hint="Email"
         android:inputType="text"
 
         />
@@ -34,7 +34,7 @@
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:hint="Password"
         android:inputType="textPassword"
 
         />
@@ -56,7 +56,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        />
+
+
 
     <Button
         android:id="@+id/btnSignUp"
@@ -64,9 +67,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:background="@color/colorPrimary"
-        android:text="SIGN UP"
-        android:textColor="#fff" />
+        android:background="@android:color/transparent"
+        android:text="Sign Up"
+        android:textColor="#3C3C3C" />
 
+
+    <!--
+
+
+    <TextView
+        android:id="@+id/tvSingUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="SIGN UP"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        android:textAlignment="center" />
+-->
 
 </LinearLayout>
