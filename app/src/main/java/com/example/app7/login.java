@@ -30,7 +30,7 @@ public class login extends AppCompatActivity {
     LinearLayout lvparent;
     TextView tvSignUp;
 
-    Button btnSignUp;
+    //Button btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +41,13 @@ public class login extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         lvparent = findViewById(R.id.lvparent);
-        btnSignUp = findViewById(R.id.btnSignUp);
+        //btnSignUp = findViewById(R.id.btnSignUp);
         progressBar = findViewById(R.id.progressBar);
         //tvSignUp = findViewById(R.id.tvSingUp);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
+/*
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class login extends AppCompatActivity {
 
             }
         });
-        /*
+
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,7 +158,11 @@ public class login extends AppCompatActivity {
         login.execute("");
     }
 
-
+    public void SingUp(View v)
+    {
+        Intent i = new Intent(login.this, signup.class);
+        startActivity(i);
+    }
 
 
 }

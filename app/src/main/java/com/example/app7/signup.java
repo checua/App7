@@ -1,6 +1,7 @@
 package com.example.app7;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -144,7 +145,23 @@ public class signup extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             btnSignUp.setVisibility(View.VISIBLE);
             if (result.equals("Added successfully")) {
-                // Clear();
+                //Clear();
+
+
+
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("userdetails",0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putString("email",edtEmailAddress.getText().toString());
+
+                editor.apply();
+
+                edtEmailAddress.setText("");
+                edtPassword.setText("");
+                edtConfirmPassword.setText("");
+
+                Intent i = new Intent(signup.this, MainActivity.class);
+                startActivity(i);
             }
 
         }
@@ -154,5 +171,7 @@ public class signup extends AppCompatActivity {
         Intent i = new Intent(signup.this, login.class);
         startActivity(i);
     }
+
+
 
 }
