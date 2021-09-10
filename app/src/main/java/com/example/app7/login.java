@@ -1,5 +1,6 @@
 package com.example.app7;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -34,19 +35,40 @@ public class login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finishActivity(0);
+        }
+        super.onCreate ( savedInstanceState );
 
-        edtEmailAddress = findViewById(R.id.edtEmailAddress);
-        edtPassword = findViewById(R.id.edtPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        lvparent = findViewById(R.id.lvparent);
-        //btnSignUp = findViewById(R.id.btnSignUp);
-        progressBar = findViewById(R.id.progressBar);
-        //tvSignUp = findViewById(R.id.tvSingUp);
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+
+        SharedPreferences sharedpreferences = getSharedPreferences("userdetails", Context.MODE_PRIVATE);
+        //get your string with default string in case referred key is not found
+        String str1 = sharedpreferences.getString("email",  null);
+        String str2 = sharedpreferences.getString("password",  null);
+
+        if (str1 != null){// && str2 != null) { //Aquí es cuando si hay un usuario logueado
+            //edtEmailAddress.setText ("email"  );
+            //edtPassword.setText ( "password" );
+
+            Intent i = new Intent(login.this, MainActivity.class);
+            startActivity(i);
+        }
+        else {
+
+            setContentView ( R.layout.login );
+
+            edtEmailAddress = findViewById ( R.id.edtEmailAddress );
+            edtPassword = findViewById ( R.id.edtPassword );
+            btnLogin = findViewById ( R.id.btnLogin );
+            lvparent = findViewById ( R.id.lvparent );
+            //btnSignUp = findViewById(R.id.btnSignUp);
+            progressBar = findViewById ( R.id.progressBar );
+            //tvSignUp = findViewById(R.id.tvSingUp);
+
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder ( ).permitAll ( ).build ( );
+            StrictMode.setThreadPolicy ( policy );
 /*
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,9 +87,7 @@ public class login extends AppCompatActivity {
             }
         });
         */
-
-
-
+        }
     }
 
 
