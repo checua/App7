@@ -23,5 +23,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_account">Account</string>
     <string name="updateAcoount">Actualizar cuenta</string>
+    <string name="confirmPassword">Confirm Password</string>
+
 
 </resources>

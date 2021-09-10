@@ -50,7 +50,7 @@
         android:id="@+id/edtConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Confirm Password"
+        android:hint="@string/confirmPassword"
         android:inputType="textPassword"
         android:textColor="#2d3436" />
 
@@ -80,7 +80,7 @@
         android:onClick="Login"
         android:text="Login"
         android:background="@android:color/transparent"
-        android:textColor="#3C3C3C" />/>
+        android:textColor="#3C3C3C" />
     <!--
        <TextView
            android:id="@+id/tvLogin"
